@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nagarjun Das — SAP BTP | CAPM | Fiori / UI5 | Agentic AI Developer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --c1:#ff7a59;   /* coral */
+    --c2:#e63d8c;   /* magenta */
+    --c3:#8a4fff;   /* violet */
+    --ink:#231f2e;
+    --soft:#433d52;
+    --muted:#736d82;
+    --accent:#d6337a;
+    --accent-2:#8a4fff;
+    --accent-soft:#fdeaf3;
+    --violet-soft:#f0eaff;
+    --line:#ece8f2;
+    --panel:#faf8fd;
+  }
+
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    color:var(--ink);
+    font-size:7.9pt;
+    line-height:1.32;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .wrap{ width:210mm; min-height:297mm; margin:0 auto; }
+
+  /* ===================== HERO ===================== */
+  .hero{
+    position:relative;
+    background:linear-gradient(110deg, var(--c1) 0%, var(--c2) 52%, var(--c3) 100%);
+    color:#fff;
+    padding:10mm 12mm 7mm;
+    overflow:hidden;
+  }
+  .hero::before{ content:""; position:absolute; right:-50px; top:-70px; width:200px; height:200px; border-radius:50%; background:rgba(255,255,255,.10); }
+  .hero::after{ content:""; position:absolute; right:90px; bottom:-90px; width:150px; height:150px; border-radius:50%; background:rgba(255,255,255,.08); }
+  .h-name{ font-size:23pt; font-weight:800; letter-spacing:1px; line-height:1.05; }
+  .h-role{ font-size:9.6pt; font-weight:500; margin-top:5px; color:#ffe9f2; letter-spacing:.3px; }
+  .h-role b{ color:#fff; font-weight:700; }
+  .h-contact{
+    display:flex; flex-wrap:wrap; gap:6px 20px;
+    margin-top:11px; padding-top:9px;
+    border-top:1px solid rgba(255,255,255,.28);
+    font-size:7.6pt; color:#fff;
+  }
+  .h-contact span{ white-space:nowrap; }
+  .h-contact .k{ font-weight:700; opacity:.85; margin-right:5px; }
+
+  /* ===================== BODY ===================== */
+  .body{ display:flex; padding:7mm 12mm 7mm; gap:15px; }
+  .col-main{ width:62%; }
+  .col-side{ width:38%; }
+
+  h2{
+    font-size:9.4pt; font-weight:800; text-transform:uppercase; letter-spacing:1.2px;
+    color:var(--accent); margin-bottom:7px; display:flex; align-items:center;
+  }
+  h2 .sq{ width:10px; height:10px; border-radius:3px; background:linear-gradient(135deg,var(--c1),var(--c3)); margin-right:8px; }
+  h2.alt{ color:var(--accent-2); }
+  .msec{ margin-bottom:8px; }
+
+  .summary{ color:var(--soft); text-align:justify; }
+  .summary b{ color:var(--accent); font-weight:600; }
+
+  /* experience */
+  .job{ margin-bottom:6px; }
+  .job-co{ font-size:9.2pt; font-weight:700; color:var(--ink); }
+  .job-meta{ display:flex; justify-content:space-between; align-items:baseline; }
+  .job-rl{ font-size:7.9pt; font-weight:600; color:var(--accent); }
+  .job-dt{ font-size:6.9pt; font-weight:700; color:var(--accent-2); white-space:nowrap; margin-left:10px; }
+  .job-cl{ font-size:7.1pt; font-style:italic; color:var(--muted); margin-bottom:3px; }
+  ul{ padding-left:13px; }
+  li{ margin-bottom:1px; color:var(--soft); }
+  li::marker{ color:var(--c2); }
+  .hl{ color:var(--accent); font-weight:600; }
+
+  /* projects */
+  .prj{ margin-bottom:4px; }
+  .prj-n{ font-size:7.9pt; font-weight:700; color:var(--ink); }
+  .prj-t{ font-size:6.6pt; font-weight:600; color:var(--accent-2); }
+  .prj-d{ font-size:7.2pt; color:var(--soft); }
+
+  /* side cards */
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:9px 11px;
+    margin-bottom:10px;
+  }
+  .card.skills{ border-top:3px solid var(--c2); }
+  .card.edu{ border-top:3px solid var(--c3); }
+  .skblk{ margin-bottom:6px; }
+  .skblk:last-child{ margin-bottom:0; }
+  .skblk .k{ font-size:7.2pt; font-weight:700; color:var(--accent); margin-bottom:3px; }
+  .chip{
+    display:inline-block; font-size:6.8pt; font-weight:500;
+    background:#fff; border:1px solid var(--line); color:var(--soft);
+    border-radius:11px; padding:1px 7px 2px; margin:0 3px 3px 0;
+  }
+  .chip.hot{ background:var(--accent-soft); border-color:#f5c6dc; color:var(--accent); font-weight:700; }
+  .chip.ai{ background:var(--violet-soft); border-color:#d9c9ff; color:var(--accent-2); font-weight:700; }
+
+  .edu-i{ margin-bottom:7px; }
+  .edu-i:last-child{ margin-bottom:0; }
+  .edu-i .d{ font-size:7.7pt; font-weight:700; color:var(--ink); line-height:1.25; }
+  .edu-i .n{ font-size:7.1pt; color:var(--muted); }
+  .edu-i .y{ display:inline-block; margin-top:2px; font-size:6.7pt; font-weight:700; color:#fff; background:var(--accent-2); border-radius:10px; padding:0.5px 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="hero">
+    <div class="h-name">NAGARJUN DAS</div>
+    <div class="h-role"><b>SAP BTP</b> • <b>SAP CAPM</b> • <b>SAP Fiori / UI5</b> Developer &nbsp;|&nbsp; <b>Agentic AI</b> Developer • Technical Lead</div>
+    <div class="h-contact">
+      <span><span class="k">✉</span>dasnagarjun1994@gmail.com</span>
+      <span><span class="k">✆</span>+91 98531 92961</span>
+      <span><span class="k">⌂</span>Bhubaneswar, Odisha, India — 751005</span>
+      <span><span class="k">&lt;/&gt;</span>github.com/Nagarjundas1994-AiAgents</span>
+    </div>
+  </div>
+
+  <!-- ===================== BODY ===================== -->
+  <div class="body">
+
+    <!-- ============ MAIN COLUMN ============ -->
+    <div class="col-main">
+
+      <div class="msec">
+        <h2><span class="sq"></span>Profile</h2>
+        <p class="summary">
+          Full-stack SAP developer and technical lead with <b>9+ years</b> of IT experience, delivering enterprise
+          applications on <b>SAP BTP</b> using <b>SAP CAPM (CAP Node.js)</b> and <b>SAP Fiori / SAPUI5</b>. Proven
+          in building secure <b>multi-tenant cloud applications</b>, exposing <b>OData V4</b> via <b>CDS &amp; CAP</b>,
+          and integrating BTP with <b>SAP S/4HANA</b>. A pioneer in integrating <b>AI Agents</b> (<b>Langgraph.js</b>,
+          <b>ADK</b>) into ERP workflows — building autonomous systems for end-to-end invoice processing and
+          supply-chain automation.
+        </p>
+      </div>
+
+      <div class="msec">
+        <h2><span class="sq"></span>Experience</h2>
+
+        <div class="job">
+          <div class="job-co">Tata Consultancy Services (TCS)</div>
+          <div class="job-meta"><div class="job-rl">SAP BTP / Fiori Developer · Technical Lead</div><div class="job-dt">MAY 2022 — PRESENT</div></div>
+          <div class="job-cl">Client: Cardinal Health — SAP BTP · CAPM · Fiori/UI5 &amp; AI Agent Development</div>
+          <ul>
+            <li>Developed and deployed full-stack applications using <span class="hl">SAP CAP (Node.js)</span> and <span class="hl">SAPUI5</span> on <span class="hl">SAP BTP</span> for supply-chain and procurement use cases.</li>
+            <li>Designed and exposed <span class="hl">OData V4</span> services via <span class="hl">CDS</span> and <span class="hl">CAP</span>; built secure <span class="hl">multi-tenant cloud apps</span> with <span class="hl">XSUAA</span> and CAP service-layer authorization, integrating with <span class="hl">SAP S/4HANA</span> and <span class="hl">SAP HANA</span>.</li>
+            <li>Implemented <span class="hl">SAP Fiori</span> apps with tiles &amp; custom catalogs and <span class="hl">Fiori Launchpad Spaces &amp; Pages</span>; built <span class="hl">Fiori Elements</span> apps (List Report / Object Page) with <span class="hl">CRUD</span> and cross-app navigation.</li>
+            <li>Designed and implemented <span class="hl">AI Agents</span> using <span class="hl">Langgraph.js</span> and <span class="hl">ADK</span> to automate end-to-end invoice processing, autonomously matching documents and reconciling discrepancies with S/4HANA.</li>
+            <li>Integrated LLMs and prompt engineering within SAP BTP applications to extract, validate and structure metadata from unstructured procurement documents.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-co">Accenture</div>
+          <div class="job-meta"><div class="job-rl">Software Analyst</div><div class="job-dt">DEC 2019 — MAY 2022</div></div>
+          <ul>
+            <li>Developed and maintained front-end components for enterprise web apps using <span class="hl">Angular</span> and <span class="hl">TypeScript</span>, translating requirements into solutions in an agile team.</li>
+            <li>Conducted code reviews and implemented bug fixes improving application performance and stability.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-co">Octal Systems Pvt. Ltd.</div>
+          <div class="job-meta"><div class="job-rl">Software Engineer</div><div class="job-dt">APR 2016 — DEC 2019</div></div>
+          <ul>
+            <li>Engineered responsive web interfaces from UI/UX wireframes using <span class="hl">HTML5</span>, <span class="hl">CSS3</span> and <span class="hl">JavaScript</span>; built reusable JSON models and data-binding patterns for client-facing apps.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="msec">
+        <h2><span class="sq"></span>Key Projects</h2>
+        <div class="prj"><div class="prj-n">SAP CAP &amp; Fiori App on BTP — Supply Chain &amp; Procurement</div><div class="prj-t">SAP BTP · CAPM · AI Agents · Langgraph.js · ADK · SAPUI5</div><div class="prj-d">Full-stack multi-tenant app; AI Agents automate invoice processing with agent-driven metadata extraction and matching.</div></div>
+        <div class="prj"><div class="prj-n">AI Agent-Driven Invoice Processor</div><div class="prj-t">Langgraph.js · ADK · SAP BTP · Node.js · Generative AI</div><div class="prj-d">Multi-agent system that processes invoices, verifies data against S/4HANA, and autonomously handles exceptions.</div></div>
+        <div class="prj"><div class="prj-n">Energy-Sector Billing Application</div><div class="prj-t">SAPUI5 · Smart Controls · OData CRUD · Routing</div><div class="prj-d">SAPUI5 Smart Filter/Table billing app with routing, filtering, full OData CRUD and an overview-page dashboard.</div></div>
+        <div class="prj"><div class="prj-n">SAP MDK Mobile POC &amp; Fiori Launchpad / UI5 Configuration &nbsp;<span class="prj-t">· MDK · FLP · SICF · OData</span></div><div class="prj-d">MDK mobile CRUD over OData annotations; end-to-end FLP/UI5 setup — tiles, catalogs, SICF &amp; OData activation.</div></div>
+        <div class="prj"><div class="prj-n">Digital Signature Application &nbsp;<span class="prj-t">· SAPUI5 · Fiori Elements · OData · SAP HANA</span></div><div class="prj-d">List Report app to create/delete users with encrypted credential storage, reading via OData from SAP HANA.</div></div>
+      </div>
+
+    </div>
+
+    <!-- ============ SIDE COLUMN ============ -->
+    <div class="col-side">
+
+      <div class="card skills">
+        <h2 class="alt"><span class="sq"></span>Core Skills</h2>
+        <div class="skblk"><div class="k">SAP BTP &amp; Cloud</div>
+          <span class="chip hot">SAP BTP</span><span class="chip hot">SAP CAPM (CAP Node.js)</span><span class="chip hot">XSUAA</span><span class="chip">Multi-Tenant SaaS</span><span class="chip">Cloud Foundry</span><span class="chip">BTP Cockpit</span></div>
+        <div class="skblk"><div class="k">SAP Fiori / UI5</div>
+          <span class="chip hot">SAP Fiori</span><span class="chip hot">SAPUI5</span><span class="chip hot">Fiori Elements</span><span class="chip">Launchpad</span><span class="chip">Smart Controls</span><span class="chip">SAP MDK</span></div>
+        <div class="skblk"><div class="k">Data &amp; Services</div>
+          <span class="chip hot">OData V4</span><span class="chip hot">CDS</span><span class="chip">REST APIs</span><span class="chip">SAP HANA</span><span class="chip">S/4HANA</span><span class="chip">ABAP Repo / Transports</span></div>
+        <div class="skblk"><div class="k">AI Agents &amp; Tools</div>
+          <span class="chip ai">AI Agents</span><span class="chip ai">Langgraph.js</span><span class="chip ai">ADK</span><span class="chip">Generative AI</span><span class="chip">Git</span><span class="chip">SQL</span></div>
+        <div class="skblk"><div class="k">Web Technologies</div>
+          <span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Angular</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
+      </div>
+
+      <div class="card edu">
+        <h2 class="alt"><span class="sq"></span>Education</h2>
+        <div class="edu-i"><div class="d">B.Tech — Mechanical Engineering</div><div class="n">BPUT, Odisha · CGPA 7.78</div><span class="y">2015</span></div>
+        <div class="edu-i"><div class="d">Senior Secondary (+2 Science)</div><div class="n">CHSE, Odisha · 75%</div><span class="y">2011</span></div>
+        <div class="edu-i"><div class="d">Secondary (10th)</div><div class="n">BSE, Odisha · 83%</div><span class="y">2009</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
