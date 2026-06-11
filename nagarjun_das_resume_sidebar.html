@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nagarjun Das — SAP BTP | CAPM | Fiori / UI5 Developer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --side-bg:#10243a;        /* deep slate-navy sidebar */
+    --side-bg2:#16314e;
+    --side-ink:#e7eef6;
+    --side-muted:#9fb6cd;
+    --accent:#2f9be0;         /* bright azure */
+    --accent-2:#1f7fc4;
+    --ink:#26313d;
+    --muted:#5f6f7e;
+    --line:#e6ecf2;
+    --soft:#eef6fc;
+  }
+
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    font-family:"Manrope","Segoe UI",Arial,sans-serif;
+    color:var(--ink);
+    font-size:8.6pt;
+    line-height:1.38;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .sheet{
+    display:flex;
+    min-height:297mm;
+    width:210mm;
+    margin:0 auto;
+  }
+
+  /* ============ SIDEBAR ============ */
+  .side{
+    width:67mm;
+    background:linear-gradient(165deg, var(--side-bg) 0%, var(--side-bg2) 100%);
+    color:var(--side-ink);
+    padding:14mm 8mm 12mm 9mm;
+  }
+  .avatar{
+    width:46px; height:46px;
+    border-radius:50%;
+    border:2px solid var(--accent);
+    background:rgba(47,155,224,.16);
+    color:#fff;
+    font-size:16pt;
+    font-weight:800;
+    line-height:42px;
+    text-align:center;
+    letter-spacing:1px;
+    margin-bottom:11px;
+  }
+  .side .nm{ font-size:16.5pt; font-weight:800; line-height:1.12; letter-spacing:.3px; }
+  .side .rl{ font-size:8.2pt; font-weight:600; color:var(--accent); margin-top:5px; letter-spacing:.4px; }
+
+  .s-block{ margin-top:16px; }
+  .s-title{
+    font-size:8pt; font-weight:800; text-transform:uppercase; letter-spacing:1.8px;
+    color:#fff; padding-bottom:5px; margin-bottom:8px;
+    border-bottom:1px solid rgba(255,255,255,.16);
+    position:relative;
+  }
+  .s-title::after{
+    content:""; position:absolute; left:0; bottom:-1px; width:26px; height:2px;
+    background:var(--accent); border-radius:2px;
+  }
+
+  .ci{ font-size:7.7pt; color:var(--side-muted); margin-bottom:6px; line-height:1.35; word-break:break-word; }
+  .ci b{ display:block; color:#fff; font-weight:600; font-size:7.4pt; letter-spacing:.6px; text-transform:uppercase; }
+
+  .skl{ margin-bottom:8px; }
+  .skl .k{ font-size:7.5pt; font-weight:700; color:#dceaf6; margin-bottom:4px; }
+  .chip{
+    display:inline-block; font-size:7pt; font-weight:600;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);
+    color:#cfe0ef; border-radius:12px;
+    padding:1px 7px 2px; margin:0 3px 3px 0;
+  }
+  .chip.hot{ background:rgba(47,155,224,.22); border-color:rgba(47,155,224,.55); color:#eaf5fd; }
+
+  .edu{ margin-bottom:9px; }
+  .edu .d{ font-size:7.8pt; font-weight:700; color:#fff; line-height:1.25; }
+  .edu .i{ font-size:7.2pt; color:var(--side-muted); }
+  .edu .y{ font-size:6.8pt; color:var(--accent); font-weight:700; }
+
+  /* ============ MAIN ============ */
+  .main{ flex:1; padding:12mm 10mm 9mm 11mm; }
+
+  h2{
+    font-size:10pt; font-weight:800; text-transform:uppercase; letter-spacing:1.6px;
+    color:var(--side-bg); margin-bottom:8px; display:flex; align-items:center;
+  }
+  h2 .dot{
+    width:7px; height:7px; border-radius:50%; background:var(--accent);
+    box-shadow:0 0 0 3px var(--soft); margin-right:9px;
+  }
+  h2 .ln{ flex:1; height:1.5px; background:var(--line); margin-left:10px; }
+
+  .msec{ margin-bottom:10px; }
+
+  .summary{ color:#3d4b59; text-align:justify; }
+  .summary b{ color:var(--accent-2); font-weight:700; }
+
+  /* experience */
+  .job{ margin-bottom:8px; }
+  .job-top{ display:flex; justify-content:space-between; align-items:baseline; }
+  .job-co{ font-size:9.6pt; font-weight:800; color:var(--side-bg); }
+  .job-dt{ font-size:7.2pt; font-weight:700; color:var(--accent-2); white-space:nowrap; margin-left:10px; }
+  .job-rl{ font-size:8.4pt; font-weight:700; color:var(--accent); margin:1px 0; }
+  .job-cl{ font-size:7.4pt; font-style:italic; color:var(--muted); margin-bottom:4px; }
+  ul{ padding-left:13px; }
+  li{ margin-bottom:2.5px; color:#3d4b59; }
+  li::marker{ color:var(--accent); }
+  .hl{ color:var(--accent-2); font-weight:700; }
+
+  /* projects */
+  .prj{ margin-bottom:6px; padding-left:11px; border-left:2.5px solid var(--accent); }
+  .prj .pn{ font-size:8.4pt; font-weight:700; color:var(--side-bg); }
+  .prj .pd{ font-size:7.7pt; color:#4b5a69; }
+  .prj .pt{ font-size:6.9pt; font-weight:700; color:var(--accent-2); letter-spacing:.2px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="side">
+    <div class="avatar">ND</div>
+    <div class="nm">Nagarjun<br>Das</div>
+    <div class="rl">SAP BTP · CAPM · Fiori/UI5 Developer</div>
+
+    <div class="s-block">
+      <div class="s-title">Contact</div>
+      <div class="ci"><b>Email</b> dasnagarjun1994@gmail.com</div>
+      <div class="ci"><b>Phone</b> +91 98531 92961</div>
+      <div class="ci"><b>Location</b> Dhenkanal, Odisha,<br>India — 759121</div>
+    </div>
+
+    <div class="s-block">
+      <div class="s-title">Core Skills</div>
+      <div class="skl">
+        <div class="k">SAP BTP &amp; Cloud</div>
+        <span class="chip hot">SAP BTP</span><span class="chip hot">CAPM</span><span class="chip hot">XSUAA</span><span class="chip">Multi-Tenant</span><span class="chip">Cloud Foundry</span>
+      </div>
+      <div class="skl">
+        <div class="k">Fiori / UI5</div>
+        <span class="chip hot">SAP Fiori</span><span class="chip hot">SAPUI5</span><span class="chip hot">Fiori Elements</span><span class="chip">Launchpad</span><span class="chip">MDK</span>
+      </div>
+      <div class="skl">
+        <div class="k">Data &amp; Services</div>
+        <span class="chip hot">OData V4</span><span class="chip hot">CDS</span><span class="chip">SAP HANA</span><span class="chip">S/4HANA</span><span class="chip">REST APIs</span>
+      </div>
+      <div class="skl">
+        <div class="k">Web</div>
+        <span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Angular</span><span class="chip">HTML5</span><span class="chip">CSS3</span>
+      </div>
+      <div class="skl">
+        <div class="k">Support &amp; DevOps</div>
+        <span class="chip">ServiceNow</span><span class="chip">Splunk</span><span class="chip">Iguana</span><span class="chip">Linux</span><span class="chip">Git</span><span class="chip">SQL</span>
+      </div>
+    </div>
+
+    <div class="s-block">
+      <div class="s-title">Education</div>
+      <div class="edu">
+        <div class="d">B.Tech, Mechanical Engineering</div>
+        <div class="i">BPUT, Odisha · CGPA 7.78</div>
+        <div class="y">2015</div>
+      </div>
+      <div class="edu">
+        <div class="d">Senior Secondary (+2 Science)</div>
+        <div class="i">CHSE, Odisha · 75%</div>
+        <div class="y">2011</div>
+      </div>
+      <div class="edu">
+        <div class="d">Secondary (10th)</div>
+        <div class="i">BSE, Odisha · 83%</div>
+        <div class="y">2009</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <div class="msec">
+      <h2><span class="dot"></span>Profile<span class="ln"></span></h2>
+      <p class="summary">
+        Full-stack SAP developer and technical lead with <b>9+ years</b> of IT experience delivering enterprise
+        applications on <b>SAP BTP</b> using <b>SAP CAPM (CAP Node.js)</b> and <b>SAP Fiori / SAPUI5</b>.
+        Proven in building secure, <b>multi-tenant cloud applications</b>, exposing <b>OData V4</b> services
+        through <b>CDS &amp; CAP</b>, and integrating BTP solutions with <b>SAP S/4HANA</b> and <b>SAP HANA</b>.
+        Pairs hands-on Fiori/UI5 engineering with strong <b>L2/L3 production support</b> and incident management
+        for high uptime and on-time delivery.
+      </p>
+    </div>
+
+    <div class="msec">
+      <h2><span class="dot"></span>Experience<span class="ln"></span></h2>
+
+      <div class="job">
+        <div class="job-top">
+          <div class="job-co">Tata Consultancy Services (TCS)</div>
+          <div class="job-dt">May 2022 — Present</div>
+        </div>
+        <div class="job-rl">SAP BTP / Fiori Developer · Technical Lead</div>
+        <div class="job-cl">Client: Cardinal Health — SAP BTP · CAPM · Fiori/UI5 Development &amp; Application Support</div>
+        <ul>
+          <li>Developed and deployed full-stack apps using <span class="hl">SAP CAP (Node.js)</span> and <span class="hl">SAPUI5</span> on <span class="hl">SAP BTP</span> for supply-chain &amp; procurement use cases.</li>
+          <li>Designed and exposed <span class="hl">OData V4</span> services via <span class="hl">CDS</span> and <span class="hl">CAP</span> to power dynamic SAP Fiori applications.</li>
+          <li>Built secure, <span class="hl">multi-tenant cloud applications</span> with <span class="hl">XSUAA</span> and CAP service-layer authorization following SAP security best practices.</li>
+          <li>Designed cloud-native applications on <span class="hl">SAP BTP CAPM</span> integrating seamlessly with <span class="hl">SAP S/4HANA</span>.</li>
+          <li>Implemented <span class="hl">SAP Fiori</span> apps with standard tiles &amp; custom catalogs; configured <span class="hl">Fiori Launchpad Spaces &amp; Pages</span> for role-based access.</li>
+          <li>Created <span class="hl">Fiori Elements</span> apps (List Report / Object Page), extension projects and master–detail apps with <span class="hl">CRUD</span> and cross-app navigation.</li>
+          <li>Used <span class="hl">SAP HANA</span> in-memory modeling for real-time processing; built RESTful &amp; OData services exposing business logic and data models.</li>
+          <li>Led end-to-end <span class="hl">SAP Fiori</span> setup from scratch and supported go-live &amp; hyper-care.</li>
+          <li>Delivered <span class="hl">L2/L3</span> support — incident lifecycle in <span class="hl">ServiceNow</span>, RCA, strict <span class="hl">SLA</span> compliance, <span class="hl">Iguana</span> integrations, <span class="hl">Splunk</span> dashboards and <span class="hl">Linux</span> automation.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <div class="job-co">Accenture</div>
+          <div class="job-dt">Dec 2019 — May 2022</div>
+        </div>
+        <div class="job-rl">Software Analyst</div>
+        <ul>
+          <li>Built and maintained front-end components for enterprise web apps using <span class="hl">Angular</span> and <span class="hl">TypeScript</span>.</li>
+          <li>Translated business requirements into technical solutions in an agile team across the full lifecycle.</li>
+          <li>Conducted code reviews and bug fixes improving performance and stability.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-top">
+          <div class="job-co">Octal Systems Pvt. Ltd.</div>
+          <div class="job-dt">Apr 2016 — Dec 2019</div>
+        </div>
+        <div class="job-rl">Software Engineer</div>
+        <ul>
+          <li>Engineered responsive web interfaces from UI/UX wireframes using <span class="hl">HTML5</span>, <span class="hl">CSS3</span> and <span class="hl">JavaScript</span>.</li>
+          <li>Key contributor to development and feature enhancement of client-facing apps; built reusable JSON models and data-binding patterns.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="msec">
+      <h2><span class="dot"></span>Key Projects<span class="ln"></span></h2>
+
+      <div class="prj">
+        <div class="pn">SAP CAP &amp; Fiori App on BTP — Supply Chain &amp; Procurement</div>
+        <div class="pd">Full-stack, multi-tenant app on SAP BTP: CAP (Node.js) exposing OData V4, secured via XSUAA, consumed by SAPUI5 / Fiori Elements.</div>
+        <div class="pt">SAP BTP · CAPM · OData V4 · CDS · XSUAA · SAPUI5</div>
+      </div>
+      <div class="prj">
+        <div class="pn">Energy-Sector Billing Application (SAP UI5)</div>
+        <div class="pd">SAPUI5 Smart Controls (Smart Filter / Table), routing, filtering and full OData CRUD with an overview-page dashboard.</div>
+        <div class="pt">SAPUI5 · Smart Controls · OData CRUD · Routing</div>
+      </div>
+      <div class="prj">
+        <div class="pn">SAP MDK Mobile App POC &nbsp;·&nbsp; Fiori Launchpad &amp; UI5 Configuration</div>
+        <div class="pd">MDK mobile CRUD app over OData annotations; end-to-end FLP/UI5 setup — tiles, catalogs, SICF &amp; OData activation, debugging.</div>
+        <div class="pt">SAP MDK · OData · Fiori Launchpad · SICF</div>
+      </div>
+      <div class="prj">
+        <div class="pn">Digital Signature App (UI5 + HANA) &nbsp;·&nbsp; Linux Support Automation</div>
+        <div class="pd">List Report app with encrypted credential storage over OData/HANA; Linux scripts for health checks &amp; Iguana restarts cut resolution time ~40%.</div>
+        <div class="pt">SAPUI5 · SAP HANA · OData · Linux · Python</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
